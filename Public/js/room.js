@@ -2,6 +2,7 @@ const contact_list = document.getElementById('contacts-list');
 const chatUserName = document.querySelector('.chat-panel .chat-header .user-details h3');
 const chatUserPfp = document.querySelector('.chat-panel .chat-header .chat-user-info .chat-avatar img');
 const chatMessagesContainer = document.querySelector('.chat-panel .chat-messages');
+const searchInput = document.querySelector('.search-container input');
 
 let activeContact = null;
 let allContactsData = [];
@@ -54,7 +55,7 @@ const UpdateContact = (contact) => {
                         <span class="last-seen">${contact.Timestamp}</span>
                     </div>`;
 
-    console.log('Created contact with name:', contact.Username);
+    // console.log('Created contact with name:', contact.Username);
     contact_list.appendChild(contact_item);
     ActiveContact(contact_item);
 };
@@ -74,6 +75,22 @@ const FetchContactsinfo = async () => {
         console.error('Failed to fetch data:', error);
     }
 };
+
+const filterContacts = (searchTerm) => {
+    // Clear the existing contact list
+    contact_list.innerHTML = '';
+    
+    // Filter the global contacts array based on the search term
+    const filteredContacts = allContactsData.filter(contact => {
+        return contact.Username.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    
+    // Re-render only the filtered contacts
+    filteredContacts.forEach(contact => {
+        UpdateContact(contact);
+    });
+};
+
 
 const displayChatMessages = (messages, members) => {
     chatMessagesContainer.innerHTML = '';
@@ -113,4 +130,12 @@ const displayChatMessages = (messages, members) => {
     chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
 };
 
-document.addEventListener('DOMContentLoaded', FetchContactsinfo);
+document.addEventListener('DOMContentLoaded', () => { 
+    FetchContactsinfo();
+
+    if (searchInput) {
+        searchInput.addEventListener('keyup', (e) => {
+            filterContacts(e.target.value);
+        });
+    }
+ });
