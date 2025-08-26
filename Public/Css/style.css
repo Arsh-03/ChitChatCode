@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    overflow-y: hidden;
+}
+
+
+body {
+    background: linear-gradient(#359646, #3fb254, #fbfffe, white);
+    color: #000000;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    overflow-y: none;
+
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    gap: 50px;
+    overflow: hidden;
+    /* flex-wrap: wrap; */
+
+}
+
+.textarea {
+    text-align: left;
+    padding: 40px;
+    border-radius: 25px;
+    background-color: white;
+}
+
+h1 {
+    font-size: 55px;
+    margin-bottom: 10px;
+    color: #359646;
+}
+
+p {
+    font-size: 20px;
+    max-width: 600px;
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+.btndiv {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 17px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: #359646;
+    color: #fbfffe;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+    font-weight: bold;
+}
+
+.btn:hover {
+    letter-spacing: 3px;
+    background-color: #359646;
+    color: #fbfffe;
+    box-shadow: 0px 7px 29px 0px rgba(53, 150, 70, 0.5);
+    transform: translateY(-5px);
+}
+
+.btn:active {
+    letter-spacing: 3px;
+    background-color: #359646;
+    color: #fbfffe;
+    box-shadow: 0px 0px 0px 0px rgba(53, 150, 70, 0.5);
+    transform: translateY(2px);
+    transition: 100ms;
+}
+
+
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero img {
+        height: auto;
+        width: 100%;
+        max-width: 480px;
+    }
+
+    .textarea {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+}

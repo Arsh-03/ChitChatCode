@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-In</title>
+    <link rel="stylesheet" href="../Css/sign-in-up.css">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="animation">
+            <dotlottie-wc src="https://lottie.host/87b3dd0e-0154-4854-b545-5eea77a79798/N4ZGsxU2Yp.lottie"
+                style="width: 300px;height: 300px" speed="1" autoplay loop></dotlottie-wc>
+        </div>
+        <div id="sign-in" class="signin-card-container">
+            <div class="signin-card">
+                <form id="signin_form" class="signin-form">
+                    <h2>Welcome Back</h2>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="sign_in_email" placeholder="abc@xyz.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <!-- Removed the password container and toggle button to align the fields -->
+                        <input type="password" id="sign_in_password" placeholder="Password">
+                    </div>
+
+                    <button type="submit" class="sign-in-button">
+                        SIGN IN
+                    </button>
+
+                    <p class="signup-text">Don't have an account yet?
+                        <a href="../html/Signup.html"><button type="button" class="signup-link">Sign-up here</button></a>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div class="animation">
+            <dotlottie-wc src="https://lottie.host/d1801010-011b-4307-849d-b6d728a93d7b/m6Qmbwx8VC.lottie"
+                style="width: 300px;height: 300px" speed="1" autoplay loop></dotlottie-wc>
+        </div>
+    </div>
+    <script src="../js/signin.js"></script>
+</body>
+
+</html>

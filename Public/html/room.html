@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChitChat - Chat Room</title>
+    <link rel="stylesheet" href="../Css/room.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="chat-container">
+        <!-- Left Navigation Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-infinity"></i>
+            </div>
+            <div class="nav-icons">
+                <!-- <a href="#" class="nav-icon"><i class="fas fa-file-alt"></i></a> -->
+                <!-- <a href="#" class="nav-icon"><i class="fas fa-calendar"></i></a> -->
+                <!-- <a href="#" class="nav-icon active"><i class="fas fa-comments"></i></a> -->
+                <a href="#" class="nav-icon"><i class="fas fa-plus"></i></a>
+                <!-- <a href="#" class="nav-icon"><i class="fa-solid fa-user-group"></i></a> -->
+                <a href="#" class="nav-icon"><i class="fa-solid fa-user-group"></i></a>
+                <a href="#" class="nav-icon"><i class="fas fa-cog"></i></a>
+            </div>
+        </nav>
+
+        <!-- Left-Central Panel - Chat Contacts List -->
+        <div class="contacts-panel">
+            <div class="panel-header">
+
+                <h2>CHAT</h2>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search Name">
+                </div>
+            </div>
+            <div class="contacts-list" id="contacts-list">
+
+            </div>
+        </div>
+
+        <!-- Middle-Central Panel - Chat Conversation Window -->
+        <div class="chat-panel">
+            <div class="chat-header">
+                <div class="chat-user-info">
+                    <div class="chat-avatar">
+                        <img>
+                    </div>
+                    <div class="user-details" id="user-details">
+                        <h3></h3>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-messages">
+                
+            </div>
+            <div class="chat-input">
+                <div class="input-container">
+                    <button class="emoji-btn">
+                        <i class="far fa-smile"></i>
+                    </button>
+                    <input type="text" placeholder="+ Type a message here...">
+                    <button class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <button class="send-code send-btn"><i class="fa-solid fa-code"></i> Code</button>
+                <button class="ask-gemini send-btn"><i class="fa-solid fa-robot"></i> Ask-Gemini</button>
+            </div>
+        </div>
+
+
+        <!-- Right-Central Panel - Details/Information Panel -->
+        <div class="details-panel">
+            <div class="user-profile">
+                <div class="profile-avatar">
+                    <img src="" alt="Wilburn Stoltenberg">
+                </div>
+                <h3>Wilburn Stoltenberg</h3>
+                <p class="user-title">CEO & Founder</p>
+            </div>
+            <div class="panel-sections">
+                <div class="section">
+                    <div class="join-tab">
+                        <input type="text" name="Join-room">
+                        <button class="sec-btn" style="padding: 10px;width: 150px;">
+                            <i class="fas fa-plus"></i>
+                            Join
+                        </button>
+                    </div>
+                    <div class="new-room">
+                        <div class="room-details">
+                            <div class="roomid">Room Id Here</div>
+                            <form action="submit">
+                                <label for="Room-image">Group profile picture</label>
+                                <input name="Room-image" type="file">
+                                <label for="Room-name">Room name</label>
+                                <input name="Room-name" type="text">
+                                <label for="Room-desc">Room description</label>
+                                <input name="Room-desc" type="text">
+                            </form>
+                            <button class="create-btn">create new</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/room.js"></script>
+</body>
+
+</html>
