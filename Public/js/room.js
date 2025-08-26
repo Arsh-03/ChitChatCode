@@ -4,7 +4,7 @@ const chatUserPfp = document.querySelector('.chat-panel .chat-header .chat-user-
 const chatMessagesContainer = document.querySelector('.chat-panel .chat-messages');
 
 let activeContact = null;
-let allContactsData = []; 
+let allContactsData = [];
 
 const ActiveContact = (contact_item) => {
     contact_item.addEventListener('click', (e) => {
@@ -28,7 +28,14 @@ const ActiveContact = (contact_item) => {
         const selectedContactData = allContactsData.find(c => c.Username === newUserName);
 
         if (selectedContactData && selectedContactData.chatMessages) {
-            displayChatMessages(selectedContactData.chatMessages, selectedContactData.image, selectedContactData.Username);
+            let members;
+            if (selectedContactData.isGroup) {
+                members = selectedContactData.members;
+            } else {
+                members = [{ name: "You", image: "" },
+                { name: selectedContactData.Username, image: selectedContactData.image }]
+            }
+            displayChatMessages(selectedContactData.chatMessages, members);
         }
     });
 };
@@ -58,7 +65,7 @@ const FetchContactsinfo = async () => {
         if (!response.ok) {
             throw new Error(`Error! status: ${response.status}`);
         }
-        allContactsData = await response.json(); 
+        allContactsData = await response.json();
         console.log(allContactsData);
         allContactsData.forEach(contact => {
             UpdateContact(contact);
@@ -68,24 +75,38 @@ const FetchContactsinfo = async () => {
     }
 };
 
-const displayChatMessages = (messages, otherContactImage, otherContactName) => {
+const displayChatMessages = (messages, members) => {
     chatMessagesContainer.innerHTML = '';
     messages.forEach(message => {
         const message_div = document.createElement('div');
         const isOutgoing = message.sender === "You";
         message_div.className = `message ${isOutgoing ? 'outgoing' : 'incoming'}`;
+        let message_avatar_html = '';
+        let sender_name_html = '';
+
+        // For incoming messages, find the sender and create the avatar and name
+        if (!isOutgoing) {
+            const senderData = members.find(member => member.name === message.sender);
+            if (senderData) {
+                message_avatar_html = `<div class="message-avatar">
+                                        <img src="${senderData.image}" alt="${senderData.name}">
+                                     </div>`;
+            }
+            // For group chats (more than 2 members), show the sender's name
+            if (members.length > 2) {
+                sender_name_html = `<p class="sender-name">${message.sender}</p>`;
+            }
+        }
+
         const message_content = `<div class="message-content">
                                 <p>${message.message}</p>
                                 <span class="message-time">${message.timestamp}</span>
-                             </div>`;
-        const message_avatar = `<div class="message-avatar">
-                                <img src="${isOutgoing ? '' : otherContactImage}" alt="${isOutgoing ? '' : otherContactName}">
                              </div>`;
 
         if (isOutgoing) {
             message_div.innerHTML = `${message_content}`;
         } else {
-            message_div.innerHTML = `${message_avatar}${message_content}`;
+             message_div.innerHTML = `${message_avatar_html}${sender_name_html}${message_content}`;
         }
         chatMessagesContainer.appendChild(message_div);
     });
