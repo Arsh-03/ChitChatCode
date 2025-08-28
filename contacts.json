@@ -1,608 +1,613 @@
 [
-    {
-        "Username": "Liam Parker",
-        "Timestamp": "Aug 25, 2025 10:05:36 PM",
-        "image": "https://picsum.photos/60/60?random=0",
-        "isGroup": false,
-        "chatMessages": [
-            {
-                "sender": "Liam Parker",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:05:47 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:07:54 PM"
-            },
-            {
-                "sender": "Liam Parker",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:08:36 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:10:09 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Mia Evans",
-        "Timestamp": "Aug 25, 2025 10:08:36 PM",
-        "image": "https://picsum.photos/60/60?random=1",
-        "isGroup": false,
-        "chatMessages": [
-            {
-                "sender": "Mia Evans",
-                "message": "I just watched an incredible movie. You should check out 'The Echo Chamber'.",
-                "timestamp": "10:09:04 PM"
-            },
-            {
-                "sender": "You",
-                "message": "Cool! I'll add that to my watchlist.",
-                "timestamp": "10:10:32 PM"
-            },
-            {
-                "sender": "Mia Evans",
-                "message": "I just watched an incredible movie. You should check out 'The Echo Chamber'.",
-                "timestamp": "10:11:04 PM"
-            },
-            {
-                "sender": "You",
-                "message": "Cool! I'll add that to my watchlist.",
-                "timestamp": "10:12:23 PM"
-            },
-            {
-                "sender": "Mia Evans",
-                "message": "I just watched an incredible movie. You should check out 'The Echo Chamber'.",
-                "timestamp": "10:13:26 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Noah Rodriguez",
-        "Timestamp": "Aug 25, 2025 10:11:36 PM",
-        "image": "https://picsum.photos/60/60?random=2",
-        "isGroup": false,
-        "chatMessages": [
-            {
-                "sender": "Noah Rodriguez",
-                "message": "I found a great recipe for lemon bars. Want me to send it over?",
-                "timestamp": "10:12:36 PM"
-            },
-            {
-                "sender": "You",
-                "message": "Oh, that sounds delicious! I'll have to try it.",
-                "timestamp": "10:12:59 PM"
-            },
-            {
-                "sender": "Noah Rodriguez",
-                "message": "I found a great recipe for lemon bars. Want me to send it over?",
-                "timestamp": "10:13:46 PM"
-            },
-            {
-                "sender": "You",
-                "message": "Oh, that sounds delicious! I'll have to try it.",
-                "timestamp": "10:14:38 PM"
-            },
-            {
-                "sender": "Noah Rodriguez",
-                "message": "I found a great recipe for lemon bars. Want me to send it over?",
-                "timestamp": "10:15:24 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Ava Wilson",
-        "Timestamp": "Aug 25, 2025 10:14:36 PM",
-        "image": "https://picsum.photos/60/60?random=3",
-        "isGroup": false,
-        "chatMessages": [
-            {
-                "sender": "Ava Wilson",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:15:00 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:16:39 PM"
-            },
-            {
-                "sender": "Ava Wilson",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:17:15 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:17:40 PM"
-            },
-            {
-                "sender": "Ava Wilson",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:18:39 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Ben Clark",
-        "Timestamp": "Aug 25, 2025 10:17:36 PM",
-        "image": "https://picsum.photos/60/60?random=4",
-        "isGroup": false,
-        "chatMessages": [
-            {
-                "sender": "Ben Clark",
-                "message": "I found a great recipe for lemon bars. Want me to send it over?",
-                "timestamp": "10:18:36 PM"
-            },
-            {
-                "sender": "You",
-                "message": "Oh, that sounds delicious! I'll have to try it.",
-                "timestamp": "10:18:46 PM"
-            },
-            {
-                "sender": "Ben Clark",
-                "message": "I found a great recipe for lemon bars. Want me to send it over?",
-                "timestamp": "10:19:24 PM"
-            },
-            {
-                "sender": "You",
-                "message": "Oh, that sounds delicious! I'll have to try it.",
-                "timestamp": "10:20:10 PM"
-            },
-            {
-                "sender": "Ben Clark",
-                "message": "I found a great recipe for lemon bars. Want me to send it over?",
-                "timestamp": "10:21:21 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Chloe Adams",
-        "Timestamp": "Aug 25, 2025 10:20:36 PM",
-        "image": "https://picsum.photos/60/60?random=5",
-        "isGroup": false,
-        "chatMessages": [
-            {
-                "sender": "Chloe Adams",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:20:51 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:21:42 PM"
-            },
-            {
-                "sender": "Chloe Adams",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:22:58 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:23:38 PM"
-            }
-        ]
-    },
-    {
-        "Username": "David Green",
-        "Timestamp": "Aug 25, 2025 10:23:36 PM",
-        "image": "https://picsum.photos/60/60?random=6",
-        "isGroup": false,
-        "chatMessages": [
-            {
-                "sender": "David Green",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:24:14 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:25:44 PM"
-            },
-            {
-                "sender": "David Green",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:26:21 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:26:54 PM"
-            },
-            {
-                "sender": "David Green",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:28:20 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:28:50 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Ella Hall",
-        "Timestamp": "Aug 25, 2025 10:26:36 PM",
-        "image": "https://picsum.photos/60/60?random=7",
-        "isGroup": false,
-        "chatMessages": [
-            {
-                "sender": "Ella Hall",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:27:22 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:28:10 PM"
-            },
-            {
-                "sender": "Ella Hall",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:28:59 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:30:18 PM"
-            },
-            {
-                "sender": "Ella Hall",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:31:20 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:31:53 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Finn Lewis",
-        "Timestamp": "Aug 25, 2025 10:29:36 PM",
-        "image": "https://picsum.photos/60/60?random=8",
-        "isGroup": false,
-        "chatMessages": [
-            {
-                "sender": "Finn Lewis",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:30:34 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:31:16 PM"
-            },
-            {
-                "sender": "Finn Lewis",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:32:28 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:32:47 PM"
-            },
-            {
-                "sender": "Finn Lewis",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:34:07 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Grace Scott",
-        "Timestamp": "Aug 25, 2025 10:32:36 PM",
-        "image": "https://picsum.photos/60/60?random=9",
-        "isGroup": false,
-        "chatMessages": [
-            {
-                "sender": "Grace Scott",
-                "message": "I found a great recipe for lemon bars. Want me to send it over?",
-                "timestamp": "10:32:47 PM"
-            },
-            {
-                "sender": "You",
-                "message": "Oh, that sounds delicious! I'll have to try it.",
-                "timestamp": "10:33:42 PM"
-            },
-            {
-                "sender": "Grace Scott",
-                "message": "I found a great recipe for lemon bars. Want me to send it over?",
-                "timestamp": "10:34:55 PM"
-            },
-            {
-                "sender": "You",
-                "message": "Oh, that sounds delicious! I'll have to try it.",
-                "timestamp": "10:35:06 PM"
-            },
-            {
-                "sender": "Grace Scott",
-                "message": "I found a great recipe for lemon bars. Want me to send it over?",
-                "timestamp": "10:36:22 PM"
-            },
-            {
-                "sender": "You",
-                "message": "Oh, that sounds delicious! I'll have to try it.",
-                "timestamp": "10:37:18 PM"
-            },
-            {
-                "sender": "Grace Scott",
-                "message": "I found a great recipe for lemon bars. Want me to send it over?",
-                "timestamp": "10:38:15 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Jacob King",
-        "Timestamp": "Aug 25, 2025 10:35:36 PM",
-        "image": "https://picsum.photos/60/60?random=10",
-        "isGroup": false,
-        "chatMessages": [
-            {
-                "sender": "Jacob King",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:35:52 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:37:03 PM"
-            },
-            {
-                "sender": "Jacob King",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:37:49 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:38:22 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Lily Baker",
-        "Timestamp": "Aug 25, 2025 10:38:36 PM",
-        "image": "https://picsum.photos/60/60?random=11",
-        "isGroup": false,
-        "chatMessages": [
-            {
-                "sender": "Lily Baker",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:39:33 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:40:28 PM"
-            },
-            {
-                "sender": "Lily Baker",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:41:37 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:42:12 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Mason Wright",
-        "Timestamp": "Aug 25, 2025 10:41:36 PM",
-        "image": "https://picsum.photos/60/60?random=12",
-        "isGroup": false,
-        "chatMessages": [
-            {
-                "sender": "Mason Wright",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:42:29 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:42:05 PM"
-            },
-            {
-                "sender": "Mason Wright",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:43:30 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:45:08 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Nora Hill",
-        "Timestamp": "Aug 25, 2025 10:44:36 PM",
-        "image": "https://picsum.photos/60/60?random=13",
-        "isGroup": false,
-        "chatMessages": [
-            {
-                "sender": "Nora Hill",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:45:17 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:45:38 PM"
-            },
-            {
-                "sender": "Nora Hill",
-                "message": "Hey, just thought of you. Do you have any thoughts on this?",
-                "timestamp": "10:46:51 PM"
-            },
-            {
-                "sender": "You",
-                "message": "That's a good point. I'll check that out.",
-                "timestamp": "10:48:05 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Oliver Moore",
-        "Timestamp": "Aug 25, 2025 10:47:36 PM",
-        "image": "https://picsum.photos/60/60?random=14",
-        "isGroup": false,
-        "chatMessages": [
-            {
-                "sender": "Oliver Moore",
-                "message": "I found a great recipe for lemon bars. Want me to send it over?",
-                "timestamp": "10:48:31 PM"
-            },
-            {
-                "sender": "You",
-                "message": "Oh, that sounds delicious! I'll have to try it.",
-                "timestamp": "10:49:30 PM"
-            },
-            {
-                "sender": "Oliver Moore",
-                "message": "I found a great recipe for lemon bars. Want me to send it over?",
-                "timestamp": "10:51:01 PM"
-            },
-            {
-                "sender": "You",
-                "message": "Oh, that sounds delicious! I'll have to try it.",
-                "timestamp": "10:52:05 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Team A",
-        "Timestamp": "Aug 25, 2025 10:55:00 PM",
-        "image": "https://picsum.photos/60/60?random=15",
-        "isGroup": true,
-        "members": [
-            {
-                "name": "You",
-                "image": "https://picsum.photos/60/60?random=16"
-            },
-            {
-                "name": "Alex",
-                "image": "https://picsum.photos/60/60?random=17"
-            },
-            {
-                "name": "Sarah",
-                "image": "https://picsum.photos/60/60?random=18"
-            }
-        ],
-        "chatMessages": [
-            {
-                "sender": "Alex",
-                "message": "Hey team, just wanted to check on the Q4 report deadline.",
-                "timestamp": "10:55:10 PM"
-            },
-            {
-                "sender": "You",
-                "message": "I'm still working on the data analysis, but it should be done by tomorrow.",
-                "timestamp": "10:56:05 PM"
-            },
-            {
-                "sender": "Sarah",
-                "message": "I've completed my section. Let me know if you need any help with your part, Alex.",
-                "timestamp": "10:57:30 PM"
-            },
-            {
-                "sender": "Alex",
-                "message": "Thanks, Sarah! I think I've got it covered.",
-                "timestamp": "10:58:15 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Game Dev Club",
-        "Timestamp": "Aug 25, 2025 10:58:00 PM",
-        "image": "https://picsum.photos/60/60?random=19",
-        "isGroup": true,
-        "members": [
-            {
-                "name": "You",
-                "image": "https://picsum.photos/60/60?random=20"
-            },
-            {
-                "name": "Maria",
-                "image": "https://picsum.photos/60/60?random=21"
-            },
-            {
-                "name": "Chris",
-                "image": "https://picsum.photos/60/60?random=22"
-            }
-        ],
-        "chatMessages": [
-            {
-                "sender": "Maria",
-                "message": "Who wants to playtest the new level? I need some feedback.",
-                "timestamp": "10:58:20 PM"
-            },
-            {
-                "sender": "You",
-                "message": "I can jump on in about 15 minutes. Send me the build.",
-                "timestamp": "10:59:05 PM"
-            },
-            {
-                "sender": "Chris",
-                "message": "I just found a bug on level 3. The character gets stuck on a rock.",
-                "timestamp": "11:00:15 PM"
-            },
-            {
-                "sender": "Maria",
-                "message": "Thanks, Chris! I'll look into that now.",
-                "timestamp": "11:01:00 PM"
-            }
-        ]
-    },
-    {
-        "Username": "Book Lovers",
-        "Timestamp": "Aug 25, 2025 11:01:00 PM",
-        "image": "https://picsum.photos/60/60?random=23",
-        "isGroup": true,
-        "members": [
-            {
-                "name": "You",
-                "image": "https://picsum.photos/60/60?random=24"
-            },
-            {
-                "name": "Sarah",
-                "image": "https://picsum.photos/60/60?random=25"
-            },
-            {
-                "name": "Jane",
-                "image": "https://picsum.photos/60/60?random=26"
-            }
-        ],
-        "chatMessages": [
-            {
-                "sender": "Sarah",
-                "message": "I finished the latest chapter. The plot twist was insane!",
-                "timestamp": "11:01:30 PM"
-            },
-            {
-                "sender": "You",
-                "message": "I know, right?! I did not see that coming at all.",
-                "timestamp": "11:02:10 PM"
-            },
-            {
-                "sender": "Jane",
-                "message": "I'm still a few pages behind, no spoilers please!",
-                "timestamp": "11:02:45 PM"
-            },
-            {
-                "sender": "You",
-                "message": "Oops, my bad! We'll be quiet.",
-                "timestamp": "11:03:00 PM"
-            }
-        ]
-    }
+  {
+    "Username": "Liam Parker",
+    "Timestamp": "Aug 25, 2025 10:12:00 PM",
+    "image": "https://picsum.photos/60/60?random=0",
+    "isGroup": false,
+    "chatMessages": [
+      {
+        "sender": "Liam Parker",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:05:47 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:07:54 PM"
+      },
+      {
+        "sender": "Liam Parker",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:08:36 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:10:09 PM"
+      },
+      {
+        "sender": "You",
+        "message": "Sure, let me review and get back to you.",
+        "timestamp": "10:12:00 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Mia Evans",
+    "Timestamp": "Aug 25, 2025 10:08:36 PM",
+    "image": "https://picsum.photos/60/60?random=1",
+    "isGroup": false,
+    "chatMessages": [
+      {
+        "sender": "Mia Evans",
+        "message": "I just watched an incredible movie. You should check out 'The Echo Chamber'.",
+        "timestamp": "10:09:04 PM"
+      },
+      {
+        "sender": "You",
+        "message": "Cool! I'll add that to my watchlist.",
+        "timestamp": "10:10:32 PM"
+      },
+      {
+        "sender": "Mia Evans",
+        "message": "I just watched an incredible movie. You should check out 'The Echo Chamber'.",
+        "timestamp": "10:11:04 PM"
+      },
+      {
+        "sender": "You",
+        "message": "Cool! I'll add that to my watchlist.",
+        "timestamp": "10:12:23 PM"
+      },
+      {
+        "sender": "Mia Evans",
+        "message": "I just watched an incredible movie. You should check out 'The Echo Chamber'.",
+        "timestamp": "10:13:26 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Noah Rodriguez",
+    "Timestamp": "Aug 25, 2025 10:11:36 PM",
+    "image": "https://picsum.photos/60/60?random=2",
+    "isGroup": false,
+    "chatMessages": [
+      {
+        "sender": "Noah Rodriguez",
+        "message": "I found a great recipe for lemon bars. Want me to send it over?",
+        "timestamp": "10:12:36 PM"
+      },
+      {
+        "sender": "You",
+        "message": "Oh, that sounds delicious! I'll have to try it.",
+        "timestamp": "10:12:59 PM"
+      },
+      {
+        "sender": "Noah Rodriguez",
+        "message": "I found a great recipe for lemon bars. Want me to send it over?",
+        "timestamp": "10:13:46 PM"
+      },
+      {
+        "sender": "You",
+        "message": "Oh, that sounds delicious! I'll have to try it.",
+        "timestamp": "10:14:38 PM"
+      },
+      {
+        "sender": "Noah Rodriguez",
+        "message": "I found a great recipe for lemon bars. Want me to send it over?",
+        "timestamp": "10:15:24 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Ava Wilson",
+    "Timestamp": "Aug 25, 2025 10:14:36 PM",
+    "image": "https://picsum.photos/60/60?random=3",
+    "isGroup": false,
+    "chatMessages": [
+      {
+        "sender": "Ava Wilson",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:15:00 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:16:39 PM"
+      },
+      {
+        "sender": "Ava Wilson",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:17:15 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:17:40 PM"
+      },
+      {
+        "sender": "Ava Wilson",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:18:39 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Ben Clark",
+    "Timestamp": "Aug 25, 2025 10:17:36 PM",
+    "image": "https://picsum.photos/60/60?random=4",
+    "isGroup": false,
+    "chatMessages": [
+      {
+        "sender": "Ben Clark",
+        "message": "I found a great recipe for lemon bars. Want me to send it over?",
+        "timestamp": "10:18:36 PM"
+      },
+      {
+        "sender": "You",
+        "message": "Oh, that sounds delicious! I'll have to try it.",
+        "timestamp": "10:18:46 PM"
+      },
+      {
+        "sender": "Ben Clark",
+        "message": "I found a great recipe for lemon bars. Want me to send it over?",
+        "timestamp": "10:19:24 PM"
+      },
+      {
+        "sender": "You",
+        "message": "Oh, that sounds delicious! I'll have to try it.",
+        "timestamp": "10:20:10 PM"
+      },
+      {
+        "sender": "Ben Clark",
+        "message": "I found a great recipe for lemon bars. Want me to send it over?",
+        "timestamp": "10:21:21 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Chloe Adams",
+    "Timestamp": "Aug 25, 2025 10:20:36 PM",
+    "image": "https://picsum.photos/60/60?random=5",
+    "isGroup": false,
+    "chatMessages": [
+      {
+        "sender": "Chloe Adams",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:20:51 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:21:42 PM"
+      },
+      {
+        "sender": "Chloe Adams",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:22:58 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:23:38 PM"
+      }
+    ]
+  },
+  {
+    "Username": "David Green",
+    "Timestamp": "Aug 25, 2025 10:23:36 PM",
+    "image": "https://picsum.photos/60/60?random=6",
+    "isGroup": false,
+    "chatMessages": [
+      {
+        "sender": "David Green",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:24:14 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:25:44 PM"
+      },
+      {
+        "sender": "David Green",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:26:21 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:26:54 PM"
+      },
+      {
+        "sender": "David Green",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:28:20 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:28:50 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Ella Hall",
+    "Timestamp": "Aug 25, 2025 10:26:36 PM",
+    "image": "https://picsum.photos/60/60?random=7",
+    "isGroup": false,
+    "chatMessages": [
+      {
+        "sender": "Ella Hall",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:27:22 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:28:10 PM"
+      },
+      {
+        "sender": "Ella Hall",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:28:59 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:30:18 PM"
+      },
+      {
+        "sender": "Ella Hall",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:31:20 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:31:53 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Finn Lewis",
+    "Timestamp": "Aug 25, 2025 10:29:36 PM",
+    "image": "https://picsum.photos/60/60?random=8",
+    "isGroup": false,
+    "chatMessages": [
+      {
+        "sender": "Finn Lewis",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:30:34 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:31:16 PM"
+      },
+      {
+        "sender": "Finn Lewis",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:32:28 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:32:47 PM"
+      },
+      {
+        "sender": "Finn Lewis",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:34:07 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Grace Scott",
+    "Timestamp": "Aug 25, 2025 10:32:36 PM",
+    "image": "https://picsum.photos/60/60?random=9",
+    "isGroup": false,
+    "chatMessages": [
+      {
+        "sender": "Grace Scott",
+        "message": "I found a great recipe for lemon bars. Want me to send it over?",
+        "timestamp": "10:32:47 PM"
+      },
+      {
+        "sender": "You",
+        "message": "Oh, that sounds delicious! I'll have to try it.",
+        "timestamp": "10:33:42 PM"
+      },
+      {
+        "sender": "Grace Scott",
+        "message": "I found a great recipe for lemon bars. Want me to send it over?",
+        "timestamp": "10:34:55 PM"
+      },
+      {
+        "sender": "You",
+        "message": "Oh, that sounds delicious! I'll have to try it.",
+        "timestamp": "10:35:06 PM"
+      },
+      {
+        "sender": "Grace Scott",
+        "message": "I found a great recipe for lemon bars. Want me to send it over?",
+        "timestamp": "10:36:22 PM"
+      },
+      {
+        "sender": "You",
+        "message": "Oh, that sounds delicious! I'll have to try it.",
+        "timestamp": "10:37:18 PM"
+      },
+      {
+        "sender": "Grace Scott",
+        "message": "I found a great recipe for lemon bars. Want me to send it over?",
+        "timestamp": "10:38:15 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Jacob King",
+    "Timestamp": "Aug 25, 2025 10:35:36 PM",
+    "image": "https://picsum.photos/60/60?random=10",
+    "isGroup": false,
+    "chatMessages": [
+      {
+        "sender": "Jacob King",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:35:52 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:37:03 PM"
+      },
+      {
+        "sender": "Jacob King",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:37:49 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:38:22 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Lily Baker",
+    "Timestamp": "Aug 25, 2025 10:38:36 PM",
+    "image": "https://picsum.photos/60/60?random=11",
+    "isGroup": false,
+    "chatMessages": [
+      {
+        "sender": "Lily Baker",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:39:33 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:40:28 PM"
+      },
+      {
+        "sender": "Lily Baker",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:41:37 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:42:12 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Mason Wright",
+    "Timestamp": "Aug 25, 2025 10:41:36 PM",
+    "image": "https://picsum.photos/60/60?random=12",
+    "isGroup": false,
+    "chatMessages": [
+      {
+        "sender": "Mason Wright",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:42:29 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:42:05 PM"
+      },
+      {
+        "sender": "Mason Wright",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:43:30 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:45:08 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Nora Hill",
+    "Timestamp": "Aug 25, 2025 10:44:36 PM",
+    "image": "https://picsum.photos/60/60?random=13",
+    "isGroup": false,
+    "chatMessages": [
+      {
+        "sender": "Nora Hill",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:45:17 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:45:38 PM"
+      },
+      {
+        "sender": "Nora Hill",
+        "message": "Hey, just thought of you. Do you have any thoughts on this?",
+        "timestamp": "10:46:51 PM"
+      },
+      {
+        "sender": "You",
+        "message": "That's a good point. I'll check that out.",
+        "timestamp": "10:48:05 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Oliver Moore",
+    "Timestamp": "Aug 25, 2025 10:47:36 PM",
+    "image": "https://picsum.photos/60/60?random=14",
+    "isGroup": false,
+    "chatMessages": [
+      {
+        "sender": "Oliver Moore",
+        "message": "I found a great recipe for lemon bars. Want me to send it over?",
+        "timestamp": "10:48:31 PM"
+      },
+      {
+        "sender": "You",
+        "message": "Oh, that sounds delicious! I'll have to try it.",
+        "timestamp": "10:49:30 PM"
+      },
+      {
+        "sender": "Oliver Moore",
+        "message": "I found a great recipe for lemon bars. Want me to send it over?",
+        "timestamp": "10:51:01 PM"
+      },
+      {
+        "sender": "You",
+        "message": "Oh, that sounds delicious! I'll have to try it.",
+        "timestamp": "10:52:05 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Team A",
+    "Timestamp": "Aug 25, 2025 10:55:00 PM",
+    "image": "https://picsum.photos/60/60?random=15",
+    "isGroup": true,
+    "members": [
+      {
+        "name": "You",
+        "image": "https://picsum.photos/60/60?random=16"
+      },
+      {
+        "name": "Alex",
+        "image": "https://picsum.photos/60/60?random=17"
+      },
+      {
+        "name": "Sarah",
+        "image": "https://picsum.photos/60/60?random=18"
+      }
+    ],
+    "chatMessages": [
+      {
+        "sender": "Alex",
+        "message": "Hey team, just wanted to check on the Q4 report deadline.",
+        "timestamp": "10:55:10 PM"
+      },
+      {
+        "sender": "You",
+        "message": "I'm still working on the data analysis, but it should be done by tomorrow.",
+        "timestamp": "10:56:05 PM"
+      },
+      {
+        "sender": "Sarah",
+        "message": "I've completed my section. Let me know if you need any help with your part, Alex.",
+        "timestamp": "10:57:30 PM"
+      },
+      {
+        "sender": "Alex",
+        "message": "Thanks, Sarah! I think I've got it covered.",
+        "timestamp": "10:58:15 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Game Dev Club",
+    "Timestamp": "Aug 25, 2025 10:58:00 PM",
+    "image": "https://picsum.photos/60/60?random=19",
+    "isGroup": true,
+    "members": [
+      {
+        "name": "You",
+        "image": "https://picsum.photos/60/60?random=20"
+      },
+      {
+        "name": "Maria",
+        "image": "https://picsum.photos/60/60?random=21"
+      },
+      {
+        "name": "Chris",
+        "image": "https://picsum.photos/60/60?random=22"
+      }
+    ],
+    "chatMessages": [
+      {
+        "sender": "Maria",
+        "message": "Who wants to playtest the new level? I need some feedback.",
+        "timestamp": "10:58:20 PM"
+      },
+      {
+        "sender": "You",
+        "message": "I can jump on in about 15 minutes. Send me the build.",
+        "timestamp": "10:59:05 PM"
+      },
+      {
+        "sender": "Chris",
+        "message": "I just found a bug on level 3. The character gets stuck on a rock.",
+        "timestamp": "11:00:15 PM"
+      },
+      {
+        "sender": "Maria",
+        "message": "Thanks, Chris! I'll look into that now.",
+        "timestamp": "11:01:00 PM"
+      }
+    ]
+  },
+  {
+    "Username": "Book Lovers",
+    "Timestamp": "Aug 25, 2025 11:01:00 PM",
+    "image": "https://picsum.photos/60/60?random=23",
+    "isGroup": true,
+    "members": [
+      {
+        "name": "You",
+        "image": "https://picsum.photos/60/60?random=24"
+      },
+      {
+        "name": "Sarah",
+        "image": "https://picsum.photos/60/60?random=25"
+      },
+      {
+        "name": "Jane",
+        "image": "https://picsum.photos/60/60?random=26"
+      }
+    ],
+    "chatMessages": [
+      {
+        "sender": "Sarah",
+        "message": "I finished the latest chapter. The plot twist was insane!",
+        "timestamp": "11:01:30 PM"
+      },
+      {
+        "sender": "You",
+        "message": "I know, right?! I did not see that coming at all.",
+        "timestamp": "11:02:10 PM"
+      },
+      {
+        "sender": "Jane",
+        "message": "I'm still a few pages behind, no spoilers please!",
+        "timestamp": "11:02:45 PM"
+      },
+      {
+        "sender": "You",
+        "message": "Oops, my bad! We'll be quiet.",
+        "timestamp": "11:03:00 PM"
+      }
+    ]
+  }
 ]

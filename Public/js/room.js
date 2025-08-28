@@ -14,7 +14,7 @@ const ActiveContact = (contact_item) => {
         }
         e.currentTarget.classList.add('active');
         activeContact = e.currentTarget;
-
+        activeContactUsername = activeContact.dataset.username;
         const newUserName = activeContact.dataset.username;
         const newUserPfp = activeContact.dataset.image;
 
@@ -139,3 +139,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
  });
+
+
+const sendBtn = document.getElementById("sendBtn");
+const msgInput = document.getElementById("msgInput");
+
+if (sendBtn && msgInput) {
+    sendBtn.addEventListener("click", async () => {
+        const msg = msgInput.value.trim();
+
+        if (!msg || !activeContactUsername) {
+            alert("Please select a contact and enter a message.");
+            return;
+        }
+
+        try {
+            const response = await fetch("/api/send", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    receiver: activeContactUsername,
+                    message: msg
+                })
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                msgInput.value = "";
+                console.log("Message sent!");
+                // Reload messages
+                const selectedContactData = allContactsData.find(c => c.Username === activeContactUsername);
+                if (selectedContactData && selectedContactData.chatMessages) {
+                    selectedContactData.chatMessages.push({
+                        sender: "You",
+                        message: msg,
+                        timestamp: new Date().toLocaleTimeString()
+                    });
+                    let members = selectedContactData.isGroup
+                        ? selectedContactData.members
+                        : [{ name: "You", image: "" }, { name: selectedContactData.Username, image: selectedContactData.image }];
+                    displayChatMessages(selectedContactData.chatMessages, members);
+                }
+            } else {
+                console.error("Error sending message:", result.error);
+            }
+        } catch (err) {
+            console.error("Failed to send message:", err);
+        }
+    });
+}
+
+

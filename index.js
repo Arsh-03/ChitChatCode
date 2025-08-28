@@ -7,6 +7,9 @@ const cors = require('cors');
 const { error } = require('console');
 const dummyData = require('./contacts.json');
 
+
+const sendMessage = require('./sendmsg');
+
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
@@ -16,6 +19,8 @@ app.use(cors());
 
 // Serve static files (your HTML, CSS, JS)
 app.use(express.static("Public"));
+app.use(express.json());
+
 
 // Route to serve the main HTML file
 app.get('/', (req, res) =>{
@@ -67,4 +72,22 @@ app.get('/api/dummy-data-contacts', (req, res) => {
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
+});
+
+
+// API route to receive message
+app.post('/api/send', (req, res) => {
+  const { receiver, message } = req.body;
+
+  if (!receiver || !message) {
+    return res.status(400).json({ success: false, error: "Receiver and message are required." });
+  }
+
+  try {
+    sendMessage(receiver, message);
+    res.json({ success: true });
+  } catch (err) {
+    console.error("Error in /api/send:", err);
+    res.status(500).json({ success: false, error: "Internal Server Error" });
+  }
 });
