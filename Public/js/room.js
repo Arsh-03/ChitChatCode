@@ -1,236 +1,314 @@
-const contact_list = document.getElementById('contacts-list');
-const chatUserName = document.querySelector('.chat-panel .chat-header .user-details h3');
-const chatUserPfp = document.querySelector('.chat-panel .chat-header .chat-user-info .chat-avatar img');
-const chatMessagesContainer = document.querySelector('.chat-panel .chat-messages');
-const searchInput = document.querySelector('.search-container input');
-const sendBtn = document.getElementById("sendBtn");
-const msgInput = document.getElementById("msgInput");
+// room.js
 
-let activeContact = null;
-let allContactsData = [];
+// Check if Socket.io is loaded
+if (typeof io === 'undefined') {
+  console.error('Socket.io not loaded! Make sure to include the socket.io client script.');
+  alert('Socket.io not loaded! Please check the console for errors.');
+} else {
+  console.log('Socket.io loaded successfully');
+}
 
-const ActiveContact = (contact_item) => {
-    contact_item.addEventListener('click', (e) => {
-        if (activeContact) {
-            activeContact.classList.remove('active');
-        }
-        e.currentTarget.classList.add('active');
-        activeContact = e.currentTarget;
-        activeContactUsername = activeContact.dataset.username;
-        const newUserName = activeContact.dataset.username;
-        const newUserPfp = activeContact.dataset.image;
+const socket = io(); // connect to socket.io server
 
-        if (chatUserName) {
-            chatUserName.textContent = newUserName;
-        }
-        if (chatUserPfp) {
-            chatUserPfp.src = newUserPfp;
-            chatUserPfp.alt = newUserName;
-        }
+const messagesContainer = document.querySelector('.chat-messages');
+const msgInput = document.getElementById('msgInput');
+const sendBtn = document.getElementById('sendBtn');
 
-        const selectedContactData = allContactsData.find(c => c.Username === newUserName);
+const currentUser = "You"; // Ideally this should be set dynamically from login
+let currentReceiver = null; // Will be set when user clicks on a contact
 
-        if (selectedContactData && selectedContactData.chatMessages) {
-            let members;
-            if (selectedContactData.isGroup) {
-                members = selectedContactData.members;
-            } else {
-                members = [{ name: "You", image: "" },
-                { name: selectedContactData.Username, image: selectedContactData.image }]
-            }
-            displayChatMessages(selectedContactData.chatMessages, members);
-        }
-    });
-};
+// Function to add message to chat container
+function addMessage(msg) {
+  const messageDiv = document.createElement('div');
+  messageDiv.classList.add('message');
 
-const UpdateContact = (contact) => {
-    const contact_item = document.createElement('div');
-    contact_item.className = 'contact-item';
-    contact_item.id = `contact-${contact.Username}`;
-    contact_item.dataset.username = contact.Username;
-    contact_item.dataset.image = contact.image;
-    contact_item.innerHTML = `<div class="contact-avatar">
-                        <img src="${contact.image}" alt="${contact.Username}">
-                    </div>
-                    <div class="contact-info">
-                        <h4>${contact.Username}</h4>
-                        <span class="last-seen">${contact.Timestamp}</span>
-                    </div>`;
+  // Determine if message is outgoing or incoming
+  if (msg.from === currentUser) {
+    messageDiv.classList.add('outgoing');
+  } else {
+    messageDiv.classList.add('incoming');
+  }
 
-    // console.log('Created contact with name:', contact.Username);
-    contact_list.appendChild(contact_item);
-    ActiveContact(contact_item);
-};
+  // Create message content with proper structure
+  messageDiv.innerHTML = `
+    <div class="message-avatar">
+      <img src="https://via.placeholder.com/32" alt="${msg.from}">
+    </div>
+    <div class="message-content">
+      <div class="sender-name">${msg.from}</div>
+      <p>${msg.text}</p>
+      <div class="message-time">${new Date(msg.timestamp).toLocaleTimeString()}</div>
+    </div>
+  `;
 
-const FetchContactsinfo = async () => {
-    try {
-        const response = await fetch('http://localhost:3000/api/dummy-data-contacts');
-        if (!response.ok) {
-            throw new Error(`Error! status: ${response.status}`);
-        }
-        allContactsData = await response.json();
-        console.log(allContactsData);
-        allContactsData.forEach(contact => {
-            UpdateContact(contact);
-        });
-    } catch (error) {
-        console.error('Failed to fetch data:', error);
+  messagesContainer.appendChild(messageDiv);
+  messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll down
+}
+
+// Load existing messages on page load
+async function loadMessages() {
+  try {
+    console.log('Loading messages...');
+    const res = await fetch('/api/messages');
+    
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
     }
-};
+    
+    const messages = await res.json();
+    console.log('Messages fetched:', messages);
 
-const filterContacts = (searchTerm) => {
-    // Clear the existing contact list
-    contact_list.innerHTML = '';
+    messagesContainer.innerHTML = ''; // Clear old messages
 
-    // Filter the global contacts array based on the search term
-    const filteredContacts = allContactsData.filter(contact => {
-        return contact.Username.toLowerCase().includes(searchTerm.toLowerCase());
-    });
-
-    // Re-render only the filtered contacts
-    filteredContacts.forEach(contact => {
-        UpdateContact(contact);
-    });
-};
-
-
-const displayChatMessages = (messages, members) => {
-    chatMessagesContainer.innerHTML = '';
-    messages.forEach(message => {
-        const message_div = document.createElement('div');
-        const isOutgoing = message.sender === "You";
-        message_div.className = `message ${isOutgoing ? 'outgoing' : 'incoming'}`;
-        let message_avatar_html = '';
-        let sender_name_html = '';
-        let delete_btn_html = `
-<button aria-label="Delete item" class="delete-button">
-  <svg
-    class="trash-svg"
-    viewBox="0 -10 64 74"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <g id="trash-can">
-      <rect
-        x="16"
-        y="24"
-        width="32"
-        height="30"
-        rx="3"
-        ry="3"
-        fill="#e74c3c"
-      ></rect>
-
-      <g transform-origin="12 18" id="lid-group">
-        <rect
-          x="12"
-          y="12"
-          width="40"
-          height="6"
-          rx="2"
-          ry="2"
-          fill="#c0392b"
-        ></rect>
-        <rect
-          x="26"
-          y="8"
-          width="12"
-          height="4"
-          rx="2"
-          ry="2"
-          fill="#c0392b"
-        ></rect>
-      </g>
-    </g>
-  </svg>
-</button>
-`;
-
-        // For incoming messages, find the sender and create the avatar and name
-        if (!isOutgoing) {
-            const senderData = members.find(member => member.name === message.sender);
-            if (senderData) {
-                message_avatar_html = `<div class="message-avatar">
-                                        <img src="${senderData.image}" alt="${senderData.name}">
-                                     </div>`;
-            }
-            // For group chats (more than 2 members), show the sender's name
-            if (members.length > 2) {
-                sender_name_html = `<p class="sender-name">${message.sender}</p>`;
-            }
-        }
-
-        const message_content = `<div class="message-content">
-                            <span><p>${message.message}</p></span>    
-                                <span class="message-time">${message.timestamp}</span>
-                             </div> `;
-
-        if (isOutgoing) {
-            message_div.innerHTML = `<div class="message-content">
-                            <span style='display:flex';><p>${message.message}</p>${delete_btn_html}</span>    
-                                <span class="message-time">${message.timestamp}</span>
-                             </div> `;
-        } else {
-            message_div.innerHTML = `${message_avatar_html}${sender_name_html}${message_content}`;
-        }
-        chatMessagesContainer.appendChild(message_div);
-    });
-    chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-    FetchContactsinfo();
-
-    if (searchInput) {
-        searchInput.addEventListener('keyup', (e) => {
-            filterContacts(e.target.value);
-        });
+    // Only show messages for the currently selected chat
+    if (!currentReceiver) {
+      const noUserDiv = document.createElement('div');
+      noUserDiv.innerHTML = '<p style="text-align: center; color: #666;">Select a contact to view messages</p>';
+      messagesContainer.appendChild(noUserDiv);
+      return;
     }
+
+    // Filter messages for current chat
+    const filtered = messages.filter(
+      m => (m.from === currentUser && m.to === currentReceiver) ||
+           (m.from === currentReceiver && m.to === currentUser)
+    );
+
+    if (filtered.length === 0) {
+      console.log('No messages found for this chat');
+      const noMsgDiv = document.createElement('div');
+      noMsgDiv.innerHTML = '<p style="text-align: center; color: #666;">No messages yet. Start a conversation!</p>';
+      messagesContainer.appendChild(noMsgDiv);
+      return;
+    }
+
+    filtered.forEach(addMessage);
+  } catch (err) {
+    console.error('Error loading messages:', err);
+    const errorDiv = document.createElement('div');
+    errorDiv.innerHTML = `<p style="text-align: center; color: red;">Error loading messages: ${err.message}</p>`;
+    messagesContainer.appendChild(errorDiv);
+  }
+}
+
+loadMessages();
+
+// Listen for new messages via socket.io
+socket.on('chat message', (msg) => {
+  console.log('New message received via socket:', msg);
+  
+  // Only show message if it's for the current active chat
+  if (currentReceiver && (
+    (msg.from === currentUser && msg.to === currentReceiver) ||
+    (msg.from === currentReceiver && msg.to === currentUser)
+  )) {
+    addMessage(msg);
+  }
 });
 
-if (sendBtn && msgInput) {
-    sendBtn.addEventListener("click", async () => {
-        const msg = msgInput.value.trim();
+// Send message function
+async function sendMessage() {
+  const text = msgInput.value.trim();
+  if (!text) return;
 
-        if (!msg || !activeContactUsername) {
-            alert("Please select a contact and enter a message.");
-            return;
-        }
+  // Check if a user is selected
+  if (!currentReceiver) {
+    alert('Please select a contact to send message to');
+    return;
+  }
 
-        try {
-            const response = await fetch("/api/send", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    receiver: activeContactUsername,
-                    message: msg
-                })
-            });
+  const msgData = {
+    from: currentUser,
+    to: currentReceiver,
+    text,
+    isGroup: false,
+    image: ''
+  };
 
-            const result = await response.json();
+  console.log('Sending message:', msgData);
 
-            if (result.success) {
-                msgInput.value = "";
-                console.log("Message sent!");
-                // Reload messages
-                const selectedContactData = allContactsData.find(c => c.Username === activeContactUsername);
-                if (selectedContactData && selectedContactData.chatMessages) {
-                    selectedContactData.chatMessages.push({
-                        sender: "You",
-                        message: msg,
-                        timestamp: new Date().toLocaleTimeString()
-                    });
-                    let members = selectedContactData.isGroup
-                        ? selectedContactData.members
-                        : [{ name: "You", image: "" }, { name: selectedContactData.Username, image: selectedContactData.image }];
-                    displayChatMessages(selectedContactData.chatMessages, members);
-                }
-            } else {
-                console.error("Error sending message:", result.error);
-            }
-        } catch (err) {
-            console.error("Failed to send message:", err);
-        }
+  // Send to backend to store and broadcast
+  try {
+    const res = await fetch('/api/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(msgData)
     });
+    const data = await res.json();
+
+    if (data.success) {
+      msgInput.value = '';
+      console.log('Message sent successfully');
+      // Message will appear from socket event
+    } else {
+      alert('Failed to send message: ' + (data.error || 'Unknown error'));
+    }
+  } catch (err) {
+    console.error('Send message error:', err);
+    alert('Network error: Could not send message');
+  }
 }
+
+// Event listeners
+sendBtn.addEventListener('click', sendMessage);
+
+// Send message on Enter key press
+msgInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage();
+  }
+});
+
+// Navigation functionality
+document.querySelectorAll('.nav-icon').forEach((icon, index) => {
+  icon.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    // Remove active class from all icons
+    document.querySelectorAll('.nav-icon').forEach(nav => nav.classList.remove('active'));
+    
+    // Add active class to clicked icon
+    icon.classList.add('active');
+    
+    // Handle different navigation items
+    switch(index) {
+      case 0: // Plus icon - Create new room
+        toggleCreateRoom();
+        break;
+      case 1: // Group icon - Join room
+        toggleJoinRoom();
+        break;
+      case 2: // Settings icon
+        console.log('Settings clicked');
+        break;
+    }
+  });
+});
+
+// Toggle create room form
+function toggleCreateRoom() {
+  const newRoom = document.querySelector('.new-room');
+  const joinTab = document.querySelector('.join-tab');
+  
+  if (newRoom.style.display === 'none' || !newRoom.style.display) {
+    newRoom.style.display = 'block';
+    joinTab.style.display = 'none';
+  } else {
+    newRoom.style.display = 'none';
+  }
+}
+
+// Toggle join room form
+function toggleJoinRoom() {
+  const joinTab = document.querySelector('.join-tab');
+  const newRoom = document.querySelector('.new-room');
+  
+  if (joinTab.style.display === 'none' || !joinTab.style.display) {
+    joinTab.style.display = 'flex';
+    newRoom.style.display = 'none';
+  } else {
+    joinTab.style.display = 'none';
+  }
+}
+
+// Sample contacts data (you should load this from your backend)
+const contacts = [
+  {
+    name: "John Doe",
+    lastSeen: "2 min ago",
+    avatar: "https://via.placeholder.com/40"
+  },
+  {
+    name: "Jane Smith", 
+    lastSeen: "5 min ago",
+    avatar: "https://via.placeholder.com/40"
+  },
+  {
+    name: "Mike Johnson",
+    lastSeen: "1 hour ago", 
+    avatar: "https://via.placeholder.com/40"
+  }
+];
+
+// Load contacts into the contacts list
+function loadContacts() {
+  const contactsList = document.getElementById('contacts-list');
+  
+  contacts.forEach(contact => {
+    const contactDiv = document.createElement('div');
+    contactDiv.classList.add('contact-item');
+    
+    contactDiv.innerHTML = `
+      <div class="contact-avatar">
+        <img src="${contact.avatar}" alt="${contact.name}">
+      </div>
+      <div class="contact-info">
+        <h4>${contact.name}</h4>
+        <div class="last-seen">${contact.lastSeen}</div>
+      </div>
+    `;
+    
+    contactDiv.addEventListener('click', () => {
+      // Remove active class from all contacts
+      document.querySelectorAll('.contact-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // Add active class to clicked contact
+      contactDiv.classList.add('active');
+      
+      // Update chat header
+      updateChatHeader(contact);
+    });
+    
+    contactsList.appendChild(contactDiv);
+  });
+}
+
+// Update chat header when contact is selected
+function updateChatHeader(contact) {
+  const chatAvatar = document.querySelector('.chat-avatar img');
+  const userDetails = document.getElementById('user-details');
+  
+  chatAvatar.src = contact.avatar;
+  chatAvatar.alt = contact.name;
+  
+  userDetails.innerHTML = `
+    <h3>${contact.name}</h3>
+    <span class="status online">Online</span>
+  `;
+  
+  // Leave previous chat room if any
+  if (currentReceiver) {
+    const oldChatId = [currentUser, currentReceiver].sort().join('-');
+    socket.emit('leave chat', oldChatId);
+  }
+  
+  // Set the current receiver for messaging
+  currentReceiver = contact.name;
+  console.log('Current receiver set to:', currentReceiver);
+  
+  // Join the new chat room
+  const newChatId = [currentUser, currentReceiver].sort().join('-');
+  socket.emit('join chat', newChatId);
+  
+  // Reload messages for this contact
+  loadMessages();
+}
+
+// Initialize contacts on page load
+loadContacts();
+
+// Add connection status logging
+socket.on('connect', () => {
+  console.log('Connected to server');
+});
+
+socket.on('disconnect', () => {
+  console.log('Disconnected from server');
+});
+
+socket.on('connect_error', (error) => {
+  console.error('Connection error:', error);
+});
