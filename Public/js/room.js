@@ -3,6 +3,8 @@ const chatUserName = document.querySelector('.chat-panel .chat-header .user-deta
 const chatUserPfp = document.querySelector('.chat-panel .chat-header .chat-user-info .chat-avatar img');
 const chatMessagesContainer = document.querySelector('.chat-panel .chat-messages');
 const searchInput = document.querySelector('.search-container input');
+const sendBtn = document.getElementById("sendBtn");
+const msgInput = document.getElementById("msgInput");
 
 let activeContact = null;
 let allContactsData = [];
@@ -79,12 +81,12 @@ const FetchContactsinfo = async () => {
 const filterContacts = (searchTerm) => {
     // Clear the existing contact list
     contact_list.innerHTML = '';
-    
+
     // Filter the global contacts array based on the search term
     const filteredContacts = allContactsData.filter(contact => {
         return contact.Username.toLowerCase().includes(searchTerm.toLowerCase());
     });
-    
+
     // Re-render only the filtered contacts
     filteredContacts.forEach(contact => {
         UpdateContact(contact);
@@ -100,6 +102,48 @@ const displayChatMessages = (messages, members) => {
         message_div.className = `message ${isOutgoing ? 'outgoing' : 'incoming'}`;
         let message_avatar_html = '';
         let sender_name_html = '';
+        let delete_btn_html = `
+<button aria-label="Delete item" class="delete-button">
+  <svg
+    class="trash-svg"
+    viewBox="0 -10 64 74"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g id="trash-can">
+      <rect
+        x="16"
+        y="24"
+        width="32"
+        height="30"
+        rx="3"
+        ry="3"
+        fill="#e74c3c"
+      ></rect>
+
+      <g transform-origin="12 18" id="lid-group">
+        <rect
+          x="12"
+          y="12"
+          width="40"
+          height="6"
+          rx="2"
+          ry="2"
+          fill="#c0392b"
+        ></rect>
+        <rect
+          x="26"
+          y="8"
+          width="12"
+          height="4"
+          rx="2"
+          ry="2"
+          fill="#c0392b"
+        ></rect>
+      </g>
+    </g>
+  </svg>
+</button>
+`;
 
         // For incoming messages, find the sender and create the avatar and name
         if (!isOutgoing) {
@@ -116,21 +160,24 @@ const displayChatMessages = (messages, members) => {
         }
 
         const message_content = `<div class="message-content">
-                                <p>${message.message}</p>
+                            <span><p>${message.message}</p></span>    
                                 <span class="message-time">${message.timestamp}</span>
-                             </div>`;
+                             </div> `;
 
         if (isOutgoing) {
-            message_div.innerHTML = `${message_content}`;
+            message_div.innerHTML = `<div class="message-content">
+                            <span style='display:flex';><p>${message.message}</p>${delete_btn_html}</span>    
+                                <span class="message-time">${message.timestamp}</span>
+                             </div> `;
         } else {
-             message_div.innerHTML = `${message_avatar_html}${sender_name_html}${message_content}`;
+            message_div.innerHTML = `${message_avatar_html}${sender_name_html}${message_content}`;
         }
         chatMessagesContainer.appendChild(message_div);
     });
     chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
 };
 
-document.addEventListener('DOMContentLoaded', () => { 
+document.addEventListener('DOMContentLoaded', () => {
     FetchContactsinfo();
 
     if (searchInput) {
@@ -138,11 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             filterContacts(e.target.value);
         });
     }
- });
-
-
-const sendBtn = document.getElementById("sendBtn");
-const msgInput = document.getElementById("msgInput");
+});
 
 if (sendBtn && msgInput) {
     sendBtn.addEventListener("click", async () => {
@@ -191,5 +234,3 @@ if (sendBtn && msgInput) {
         }
     });
 }
-
-
