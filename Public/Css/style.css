@@ -6,9 +6,8 @@
 
 html,
 body {
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
-
 
 body {
     background: linear-gradient(#359646, #3fb254, #fbfffe, white);
@@ -19,8 +18,6 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 1rem;
-    overflow-y: none;
-
 }
 
 .main {
@@ -30,9 +27,20 @@ body {
     min-height: 100vh;
     padding: 20px;
     gap: 50px;
-    overflow: hidden;
-    /* flex-wrap: wrap; */
+    width: 100%;
+    max-width: 1400px;
+}
 
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.hero dotlottie-wc {
+    max-width: 100%;
+    height: auto;
 }
 
 .textarea {
@@ -40,12 +48,16 @@ body {
     padding: 40px;
     border-radius: 25px;
     background-color: white;
+    flex: 1;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     font-size: 55px;
     margin-bottom: 10px;
     color: #359646;
+    line-height: 1.2;
 }
 
 p {
@@ -53,6 +65,7 @@ p {
     max-width: 600px;
     margin-top: 0;
     line-height: 1.5;
+    color: #333;
 }
 
 .btndiv {
@@ -60,6 +73,7 @@ p {
     justify-content: center;
     gap: 25px;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -75,11 +89,15 @@ p {
     font-size: 15px;
     transition: all 0.5s ease;
     font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    min-width: 140px;
 }
 
 .btn:hover {
     letter-spacing: 3px;
-    background-color: #359646;
+    background-color: #2d7a3a;
     color: #fbfffe;
     box-shadow: 0px 7px 29px 0px rgba(53, 150, 70, 0.5);
     transform: translateY(-5px);
@@ -94,29 +112,330 @@ p {
     transition: 100ms;
 }
 
+/* Responsive design */
+@media (max-width: 1200px) {
+    .main {
+        gap: 30px;
+        padding: 15px;
+    }
+    
+    .hero dotlottie-wc {
+        width: 35vw !important;
+        height: 80vh !important;
+    }
+    
+    h1 {
+        font-size: 48px;
+    }
+    
+    p {
+        font-size: 18px;
+    }
+    
+    .textarea {
+        padding: 35px;
+    }
+}
 
+@media (max-width: 1024px) {
+    .hero dotlottie-wc {
+        width: 30vw !important;
+        height: 70vh !important;
+    }
+    
+    h1 {
+        font-size: 42px;
+    }
+    
+    .textarea {
+        padding: 30px;
+    }
+    
+    .btn {
+        padding: 15px 35px;
+        font-size: 14px;
+    }
+}
 
 @media (max-width: 768px) {
+    body {
+        padding: 0.5rem;
+    }
+    
     .main {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
+        padding: 10px;
+        min-height: auto;
     }
 
-    .hero img {
-        height: auto;
-        width: 100%;
-        max-width: 480px;
+    .hero {
+        order: 2;
     }
-
+    
     .textarea {
-        padding: 20px;
+        order: 1;
+        padding: 25px;
+        width: 100%;
+        max-width: none;
+        text-align: center;
+    }
+
+    .hero dotlottie-wc {
+        width: 80vw !important;
+        height: 50vh !important;
+        max-width: 400px !important;
     }
 
     h1 {
-        font-size: 40px;
+        font-size: 36px;
     }
 
     p {
-        font-size: 20px;
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+    
+    .btndiv {
+        gap: 15px;
+        margin-top: 25px;
+    }
+    
+    .btn {
+        padding: 14px 30px;
+        font-size: 13px;
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0.25rem;
+    }
+    
+    .main {
+        gap: 15px;
+        padding: 5px;
+    }
+    
+    .textarea {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    
+    .btndiv {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-top: 20px;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        font-size: 12px;
+        width: 100%;
+        max-width: 200px;
+        border-radius: 40px;
+    }
+    
+    .btn:hover {
+        transform: translateY(-2px);
+        letter-spacing: 2px;
+    }
+    
+    .hero dotlottie-wc {
+        width: 90vw !important;
+        height: 40vh !important;
+        max-width: 300px !important;
+    }
+}
+
+@media (max-width: 320px) {
+    .textarea {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    p {
+        font-size: 14px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 11px;
+    }
+    
+    .hero dotlottie-wc {
+        width: 95vw !important;
+        height: 35vh !important;
+        max-width: 250px !important;
+    }
+}
+
+/* Landscape orientation for tablets */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .main {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .hero {
+        order: 1;
+        flex: 0 0 40%;
+    }
+    
+    .textarea {
+        order: 2;
+        text-align: left;
+        flex: 1;
+    }
+    
+    .hero dotlottie-wc {
+        width: 100% !important;
+        height: 60vh !important;
+    }
+    
+    h1 {
+        font-size: 32px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+}
+
+/* Landscape orientation for phones */
+@media (max-width: 768px) and (orientation: landscape) {
+    .main {
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .hero {
+        order: 1;
+        flex: 0 0 45%;
+    }
+    
+    .textarea {
+        order: 2;
+        flex: 1;
+        text-align: left;
+        padding: 20px;
+    }
+    
+    .hero dotlottie-wc {
+        width: 100% !important;
+        height: 70vh !important;
+        max-width: none !important;
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    p {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    
+    .btndiv {
+        margin-top: 15px;
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    .btn {
+        padding: 8px 15px;
+        font-size: 10px;
+        min-width: 80px;
+    }
+}
+
+/* High resolution displays */
+@media (min-width: 1400px) {
+    .main {
+        gap: 80px;
+    }
+    
+    .hero dotlottie-wc {
+        width: 500px !important;
+        height: 100vh !important;
+    }
+    
+    .textarea {
+        padding: 50px;
+    }
+    
+    h1 {
+        font-size: 65px;
+    }
+    
+    p {
+        font-size: 22px;
+    }
+    
+    .btn {
+        padding: 20px 45px;
+        font-size: 16px;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .btn {
+        transition: none;
+    }
+    
+    .btn:hover {
+        transform: none;
+    }
+    
+    .btn:active {
+        transform: none;
+        transition: none;
+    }
+}
+
+/* Focus styles for better accessibility */
+.btn:focus {
+    outline: 3px solid #359646;
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .hero dotlottie-wc {
+        display: none;
+    }
+    
+    .textarea {
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    .btn {
+        display: none;
     }
 }

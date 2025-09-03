@@ -7,9 +7,29 @@
     <title>ChitChat - Chat Room</title>
     <link rel="stylesheet" href="../Css/room.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Additional mobile-specific styles */
+        @media (max-width: 768px) {
+            .mobile-view-contacts .contacts-panel {
+                display: flex !important;
+            }
+            
+            .mobile-view-contacts .chat-panel {
+                display: none !important;
+            }
+            
+            .mobile-view-chat .contacts-panel {
+                display: none !important;
+            }
+            
+            .mobile-view-chat .chat-panel {
+                display: flex !important;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="mobile-view-contacts">
     <div class="chat-container">
         <!-- Left Navigation Sidebar -->
         <nav class="sidebar">
@@ -17,11 +37,7 @@
                 <i class="fas fa-infinity"></i>
             </div>
             <div class="nav-icons">
-                <!-- <a href="#" class="nav-icon"><i class="fas fa-file-alt"></i></a> -->
-                <!-- <a href="#" class="nav-icon"><i class="fas fa-calendar"></i></a> -->
-                <!-- <a href="#" class="nav-icon active"><i class="fas fa-comments"></i></a> -->
                 <a href="#" class="nav-icon"><i class="fas fa-plus"></i></a>
-                <!-- <a href="#" class="nav-icon"><i class="fa-solid fa-user-group"></i></a> -->
                 <a href="#" class="nav-icon"><i class="fa-solid fa-user-group"></i></a>
                 <a href="#" class="nav-icon"><i class="fas fa-cog"></i></a>
             </div>
@@ -30,65 +46,71 @@
         <!-- Left-Central Panel - Chat Contacts List -->
         <div class="contacts-panel">
             <div class="panel-header">
-
-                <h2>CHAT</h2>
+                <h2>CHATS</h2>
             </div>
             <div class="search-container">
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search Name">
+                    <input type="text" placeholder="Search contacts...">
                 </div>
             </div>
             <div class="contacts-list" id="contacts-list">
-
+                <!-- Contacts will be dynamically loaded here -->
             </div>
         </div>
 
         <!-- Middle-Central Panel - Chat Conversation Window -->
         <div class="chat-panel">
             <div class="chat-header">
+                <!-- Mobile back button will be inserted here by JavaScript -->
                 <div class="chat-user-info">
                     <div class="chat-avatar">
-                        <img>
+                        <img src="https://via.placeholder.com/40" alt="User">
                     </div>
                     <div class="user-details" id="user-details">
-                        <h3></h3>
-                        <span></span>
+                        <h3>Select a contact</h3>
+                        <span class="status">Choose someone to chat with</span>
                     </div>
                 </div>
             </div>
             <div class="chat-messages">
-                
+                <div style="text-align: center; color: #666; padding: 40px;">
+                    <i class="fas fa-comments" style="font-size: 48px; margin-bottom: 16px; opacity: 0.5;"></i>
+                    <p>Select a contact from the list to start chatting</p>
+                </div>
             </div>
             <div class="chat-input">
                 <div class="input-container">
                     <button class="emoji-btn">
                         <i class="far fa-smile"></i>
                     </button>
-                    <input id="msgInput" type="text" placeholder="+ Type a message here...">
-                    <button id="sendBtn"  class="send-btn">
+                    <input id="msgInput" type="text" placeholder="Type a message...">
+                    <button id="sendBtn" class="send-btn">
                         <i class="fas fa-paper-plane"></i>
                     </button>
                 </div>
-                <button class="send-code send-btn"><i class="fa-solid fa-code"></i> Code</button>
-                <button class="ask-gemini send-btn"><i class="fa-solid fa-robot"></i> Ask-Gemini</button>
+                <button class="send-code send-btn">
+                    <i class="fa-solid fa-code"></i> Code
+                </button>
+                <button class="ask-gemini send-btn">
+                    <i class="fa-solid fa-robot"></i> Ask-Gemini
+                </button>
             </div>
         </div>
-
 
         <!-- Right-Central Panel - Details/Information Panel -->
         <div class="details-panel">
             <div class="user-profile">
                 <div class="profile-avatar">
-                    <img src="" alt="Wilburn Stoltenberg">
+                    <img src="https://via.placeholder.com/80" alt="User Profile">
                 </div>
-                <h3>Wilburn Stoltenberg</h3>
-                <p class="user-title">CEO & Founder</p>
+                <h3>User Profile</h3>
+                <p class="user-title">Online Status</p>
             </div>
             <div class="panel-sections">
                 <div class="section">
                     <div class="join-tab">
-                        <input type="text" name="Join-room">
+                        <input type="text" placeholder="Enter room ID" name="Join-room">
                         <button class="sec-btn" style="padding: 10px;width: 150px;">
                             <i class="fas fa-plus"></i>
                             Join
@@ -105,19 +127,21 @@
                                 <label for="Room-desc">Room description</label>
                                 <input name="Room-desc" type="text">
                             </form>
-                            <button class="create-btn">create new</button>
+                            <button class="create-btn">Create New</button>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- IMPORTANT: Add Socket.io client script BEFORE your custom script -->
+    <!-- Scripts -->
     <script src="/socket.io/socket.io.js"></script>
     <script src="../js/room.js"></script>
-    <!-- <script src="../js/try.js"></script> -->
+</body>
+
+</html>.value = '';
+    </script>
 </body>
 
 </html>
